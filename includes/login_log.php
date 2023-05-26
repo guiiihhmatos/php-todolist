@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     require '../configuration/database/conexao.php';
 
     // Obtém os dados enviados pelo formulário
@@ -16,6 +16,13 @@
     // Verifique se o usuário existe no banco de dados
     if ($stmt->rowCount() > 0) 
     {
+        // Obtenha os dados do usuário
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Atribua os dados do usuário às variáveis de sessão
+        $_SESSION['cd_usuario'] = $usuario['cd_usuario'];
+        $_SESSION['username'] = $usuario['username'];
+        $_SESSION['password'] = $usuario['password'];
         // O login é válido, redirecione para a página de sucesso
         header("Location: tarefas.php");
         exit();
