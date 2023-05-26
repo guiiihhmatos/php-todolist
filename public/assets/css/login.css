@@ -45,9 +45,8 @@
 
 .button__login:hover
 {
-
     background-color: #6584e0;
-
+    transition: 0.5s;
 }
 
 /* ===== paragrafo do login =====*/

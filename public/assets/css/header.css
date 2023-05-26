@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para a header__list */
+.header__list 
+{
+    background-color: #009DCF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    font-family: 'Cabin', sans-serif;
+}
+
+.header__list ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header__list li 
+{
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.header__list li:hover 
+{
+    scale: 1.05;
+}
+
+
+.header__list a 
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos para o botão */
+.btn 
+{
+    border: none;
+    height: 40px;
+    width: 140px;
+    background-color: #4169E1;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Cabin', sans-serif;
+}
+
+.btn:hover
+{
+    background-color: #6584e0;
+    transition: 0.5s;
+}
