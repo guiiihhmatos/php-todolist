@@ -1,0 +1,67 @@
+/* ===== sessao de login ===== */
+
+.section__login
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===== container do login ===== */
+.login
+{
+    height: 400px;
+    width: 700px;
+}
+
+/* ===== container do login left ===== */
+
+.login__container-left
+{
+    background-color: #AED6F1;
+    border-radius: 10px 0 0 10px;
+}
+
+/* ===== container do login right ===== */
+
+.login__container-right
+{
+    border-radius: 0 10px 10px 0;
+    background-color: #fffafa;
+}
+
+/* ===== botao do login ===== */
+.button__login
+{
+    border: none;
+    height: 50px;
+    width: 140px;
+    background-color: #4169E1;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+}
+
+.button__login:hover
+{
+
+    background-color: #6584e0;
+
+}
+
+/* ===== paragrafo do login =====*/
+
+.login__container-paragrafo
+{
+    text-align: justify;
+    width: 70%;
+}
+
+/* ===== imagem ===== */
+
+.login__imagem
+{
+    height: 200px;
+    height: 200px;
+}
