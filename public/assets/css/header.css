@@ -62,3 +62,19 @@
     background-color: #6584e0;
     transition: 0.5s;
 }
+
+/* classe para o logout do usuario*/
+
+.usuario__pai
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.usuario
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

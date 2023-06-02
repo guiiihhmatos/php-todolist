@@ -90,6 +90,7 @@ tr
 td {
     text-align: center;
     height: 50px;
+    padding: 0 10px;
 }
 
 .botao__deletar {
