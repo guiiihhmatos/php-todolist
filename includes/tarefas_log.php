@@ -30,12 +30,11 @@
 </head>
 <body>
     <div class="table-container">
-        <h1 style="margin: 30px 0;">Lista de Tarefas</h1>
+        <h1 style="margin-top: 20px; color: white;">Lista de Tarefas</h1>
 
         <table class="table-tarefas">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Título</th>
                     <th>Descrição</th>
                     <th>Data de Criação</th>
@@ -52,7 +51,6 @@
                 if (count($tarefas) > 0) {
                     foreach ($tarefas as $tarefa) {
                         echo "<tr>";
-                        echo "<td>" . $tarefa['id'] . "</td>";
                         echo "<td>" . $tarefa['titulo'] . "</td>";
                         echo "<td>" . $tarefa['descricao'] . "</td>";
                         echo "<td>" . strftime('%d/%m/%Y %H:%M:%S', strtotime($tarefa['data_criacao'])) . "</td>";

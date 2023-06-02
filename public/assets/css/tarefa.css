@@ -56,29 +56,35 @@ label
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #265a88;
+    border-radius: 10px;
 }
 
 .table-tarefas {
     width: 1000px;
     font-family: Arial, sans-serif;
-    border: 2px solid black;
+    border: 2px solid white;
+    margin: 50px;
 }
 
 th {
-    background-color: #265a88;
+    background-color: white;
     font-size: 14px;
     height: 40px;
     text-align: center;
-    color: white;
+    color: black;
     padding: 0;
-    width: 200px;
+    width: 250px;
 }
 
 
 tr 
 {
-    border: 2px solid black;
+    background-color: #fffafa;
 }
 
 td {
@@ -90,7 +96,7 @@ td {
 
     border: none;
     background-color: red;
-    width: 70px;
+    width: 80px;
     height: 40px;
     border-radius: 10px;
     color: white;
@@ -111,7 +117,7 @@ td {
 {
     border: none;
     background-color: #90ee90;
-    width: 70px;
+    width: 80px;
     height: 40px;
     border-radius: 10px;
     color: black;
