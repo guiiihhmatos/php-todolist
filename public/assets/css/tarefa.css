@@ -1,0 +1,120 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+.tarefas {
+    width: 600px;
+    background-color: #265a88;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.tarefas__title {
+    text-align: center;
+    color: white;
+}
+
+.section__tarefa {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+label
+{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+/* Estilos para o botão */
+.botao {
+    border: none;
+    height: 40px;
+    width: 140px;
+    background-color: #436d92;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Cabin', sans-serif;
+}
+
+
+
+
+/*==== tabela ====*/
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.table-tarefas {
+    width: 1000px;
+    font-family: Arial, sans-serif;
+    border: 2px solid black;
+}
+
+th {
+    background-color: #265a88;
+    font-size: 14px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    padding: 0;
+    width: 200px;
+}
+
+
+tr 
+{
+    border: 2px solid black;
+}
+
+td {
+    text-align: center;
+    height: 50px;
+}
+
+.botao__deletar {
+
+    border: none;
+    background-color: red;
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.botao__deletar:hover
+{
+    background-color: rgb(255, 56, 56);
+}
+
+.botao__deletar a i
+{
+    color: white;
+}
+
+.botao__editar
+{
+    border: none;
+    background-color: #90ee90;
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+}

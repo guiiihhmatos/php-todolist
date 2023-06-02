@@ -9,7 +9,7 @@
 /* Estilos para a header__list */
 .header__list 
 {
-    background-color: #009DCF;
+    background-color: #265a88;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -44,7 +44,7 @@
 }
 
 /* Estilos para o botão */
-.btn 
+.botao-logout
 {
     border: none;
     height: 40px;
@@ -57,7 +57,7 @@
     font-family: 'Cabin', sans-serif;
 }
 
-.btn:hover
+.botao-logout:hover
 {
     background-color: #6584e0;
     transition: 0.5s;
