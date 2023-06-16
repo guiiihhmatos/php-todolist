@@ -1,15 +1,15 @@
 <?php
 
-    require '../configuration/database/conexao.php';
+    require_once '../configuration/database/conexao.php';
 
     //Função para logar no sistema
     function logar($username, $password)
     {
-        global $conexão;
+        global $conexao;
 
         // Crie a consulta SQL para verificar o login do usuário
         $sql = "SELECT * FROM tb_usuario WHERE username = :username AND password = :password";
-        $stmt = $conexão->prepare($sql);
+        $stmt = $conexao->prepare($sql);
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $password);
         $stmt->execute();

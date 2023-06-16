@@ -97,11 +97,8 @@ td {
 
     border: none;
     background-color: red;
-    width: 80px;
-    height: 40px;
+    padding: 12px 28px;
     border-radius: 10px;
-    color: white;
-    cursor: pointer;
 }
 
 .botao__deletar:hover
@@ -117,11 +114,24 @@ td {
 .botao__editar
 {
     border: none;
-    background-color: #90ee90;
-    width: 80px;
-    height: 40px;
+    background-color: rgb(255, 255, 80);
+    padding: 12px 28px;
     border-radius: 10px;
-    color: black;
-    cursor: pointer;
-    font-weight: 600;
+    
+}
+
+.botao__concluir
+{
+    border: none;
+    background-color: #90ee90;
+    padding: 12px 28px;
+    border-radius: 10px;
+}
+
+.botao__reabrir {
+
+    border: none;
+    background-color: rgb(255, 65, 65);
+    padding: 12px 28px;
+    border-radius: 10px;
 }

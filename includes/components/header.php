@@ -1,5 +1,5 @@
 <?php
-  require '../configuration/queries/login_queries.php';
+  require_once '../configuration/queries/login_queries.php';
 
   // Verificar se o botão de logout foi clicado
   if (isset($_POST['logout'])) {

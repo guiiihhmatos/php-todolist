@@ -1,7 +1,9 @@
 <?php
+
     session_start();
-    require '../configuration/queries/tarefa_queries.php';
-    require './components/header.php';
+
+    require_once '../configuration/queries/tarefa_queries.php';
+    require_once './components/header.php';
 
     $cd_usuario = $_SESSION['cd_usuario'];
     $username = $_SESSION['username'];
@@ -19,15 +21,28 @@
         header("Location: tarefas_log.php");
         exit();
     }
+
+    if (isset($_GET['status_id'], $_GET['status'])) {
+        $status_id = $_GET['status_id'];
+        $status = $_GET['status'];
+        alterStatus($status_id, $status);
+        header("Location: tarefas_log.php");
+        exit();
+    }
+
+    $tarefas = getAllTarefas($cd_usuario);
+
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Minhas Tarefas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../public/assets/css/tarefa.css">
 </head>
+
 <body>
     <div class="table-container">
         <h1 style="margin-top: 20px; color: white;">Lista de Tarefas</h1>
@@ -38,35 +53,40 @@
                     <th>Título</th>
                     <th>Descrição</th>
                     <th>Data de Criação</th>
+                    <th>Data de Conclusão</th>
                     <th colspan="2">Ação</th>
+                    <th>Concluir</th>
                 </tr>
             </thead>
             <tbody>
-            <?php
-                // Obter todas as tarefas do usuário
-                $cd_usuario = $_SESSION['cd_usuario'];
-                $tarefas = getAllTarefas($cd_usuario);
+                <?php if (count($tarefas) > 0) : ?>
+                    <?php foreach ($tarefas as $tarefa) : ?>
+                        <tr>
+                            <td><?= $tarefa['titulo'] ?></td>
+                            <td><?= $tarefa['descricao'] ?></td>
+                            <td><?= date('d/m/Y H:m:s', strtotime($tarefa['data_criacao'])) ?></td>
+                            <td><?= $tarefa['data_conclusao']? date('d/m/Y H:m:s', strtotime($tarefa['data_conclusao'])) : 'Em aberto' ?></td>
+                            <td><a title="Deletar" class='botao__deletar' href='tarefas_log.php?delete_id=<?= $tarefa['cd_tarefa'] ?>'><i class='bi bi-trash-fill' style='color: white;'></i></a></td>
+                            <td><a title="Editar" class='botao__editar' href='criarTarefa_log.php?cd_tarefa=<?= $tarefa['cd_tarefa'] ?>'><i class='bi bi-pencil' style='color: black;'></i></a></td>
+                            <td>
+                                <?php if ($tarefa['fl_status']) : ?>
+                                    <a title="Reabrir" class='botao__reabrir' href='tarefas_log.php?status_id=<?= $tarefa['cd_tarefa']?>&status=false'><i class='bi bi-x-circle' style='color: white;'></i></a>
 
-                // Verificar se existem tarefas
-                if (count($tarefas) > 0) {
-                    foreach ($tarefas as $tarefa) {
-                        echo "<tr>";
-                        echo "<td>" . $tarefa['titulo'] . "</td>";
-                        echo "<td>" . $tarefa['descricao'] . "</td>";
-                        echo "<td>" . strftime('%d/%m/%Y %H:%M:%S', strtotime($tarefa['data_criacao'])) . "</td>";
-                        echo "<td><button class='botao__deletar'><a href='tarefas_log.php?delete_id=" . $tarefa['id'] . "' ><i class='bi bi-trash-fill' style='color: white;'></i></a></button></td>";
-                        echo "<td><button class='botao__editar' onclick='editTarefa(" . $tarefa['id'] . ")'><i class='bi bi-pencil'></i></button></td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr>";
-                    echo "<td colspan='5'>Nenhuma tarefa encontrada.</td>";
-                    echo "</tr>";
-                }
-            ?>
+                                <?php else : ?>
+                                    <a title="Concluir" class='botao__concluir' href='tarefas_log.php?status_id=<?= $tarefa['cd_tarefa']?>&status=true'><i class='bi bi-check-circle' style='color: black;'></i></a>
+
+                            </td>
+                        <?php endif ?>
+                        </td>
+                        </tr>
+
+                    <?php endforeach ?>
+                <?php endif ?>
+
             </tbody>
         </table>
     </div>
-  
+
 </body>
+
 </html>
