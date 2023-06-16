@@ -97,6 +97,21 @@
 
 
     // Função para editar a tarefa
-    function editTarefa(){}
+    function editTarefa($cd_tarefa, $titulo, $descricao, $fl_status)
+    {
+        global $conexao;
+
+        $sql = "UPDATE tb_tarefa SET titulo = :titulo, descricao = :descricao, fl_status = :fl_status WHERE cd_tarefa = :cd_tarefa";
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(':titulo', $titulo);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->bindParam(':fl_status', $fl_status);
+        $stmt->bindParam(':cd_tarefa', $cd_tarefa);
+
+        $stmt->execute();
+        $tarefas = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $tarefas;
+    }
 
 ?>
